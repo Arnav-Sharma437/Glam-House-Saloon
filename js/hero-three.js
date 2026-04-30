@@ -4,6 +4,8 @@
 (function () {
   function init() {
     if (typeof THREE === "undefined") return;
+    /* Skip WebGL on phones/tablets — smoother scroll, less battery */
+    if (window.matchMedia("(max-width: 1023px)").matches) return;
     const mount = document.getElementById("hero-three");
     if (!mount) return;
 

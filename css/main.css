@@ -29,8 +29,35 @@ canvas {
   max-width: 100%;
 }
 
-.site-footer {
-  overflow-x: clip;
+/* Sticky bar: clear notch / home indicator overlap */
+.site-header {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+}
+
+/* Narrow phones: logo scales instead of colliding with menu + theme */
+.header-logo {
+  font-size: clamp(0.875rem, 0.42rem + 1.75vw, 1.5rem);
+}
+
+/* Full-screen mobile menu above sticky header (was z-999 < header 1000) */
+#nav-mobile {
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+  padding-top: max(1.25rem, calc(env(safe-area-inset-top, 0px) + 0.5rem));
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+}
+
+/* Footer content: was py-14 → too much empty space below copyright on short viewports */
+.site-footer__inner {
+  padding-top: 2.75rem;
+  padding-bottom: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .site-footer__inner {
+    padding-top: 3.25rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 /* WhatsApp cluster: respect safe area + small screens */
@@ -640,6 +667,7 @@ html:not(.dark) .promo-wow__inner {
 /* Site footer */
 .site-footer {
   position: relative;
+  overflow: hidden;
   border-top: 1px solid rgba(212, 175, 55, 0.2);
   background: linear-gradient(180deg, rgba(62, 47, 35, 0.12) 0%, rgba(11, 11, 11, 0.55) 100%);
 }
@@ -667,12 +695,12 @@ html:not(.dark) .promo-wow__inner {
 
 .site-footer__orb {
   position: absolute;
-  width: 280px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
-  bottom: -120px;
-  right: -80px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  bottom: -72px;
+  right: -64px;
   pointer-events: none;
 }
 

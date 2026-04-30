@@ -6,12 +6,16 @@
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
 
+    const fast = window.matchMedia("(max-width: 767px)").matches;
+    const dur = fast ? 0.45 : 0.75;
+    const dy = fast ? 22 : 36;
+
     gsap.utils.toArray("[data-reveal]").forEach(function (el) {
       gsap.from(el, {
         scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" },
-        y: 36,
+        y: dy,
         opacity: 0,
-        duration: 0.75,
+        duration: dur,
         ease: "power3.out",
       });
     });
@@ -35,11 +39,11 @@
     gsap.utils.toArray("[data-text-reveal]").forEach(function (el, i) {
       gsap.from(el, {
         scrollTrigger: { trigger: el, start: "top 85%" },
-        y: 24,
+        y: fast ? 16 : 24,
         opacity: 0,
-        duration: 0.7,
+        duration: fast ? 0.42 : 0.7,
         ease: "power3.out",
-        delay: i * 0.05,
+        delay: fast ? i * 0.03 : i * 0.05,
       });
     });
 
