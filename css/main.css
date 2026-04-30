@@ -9,8 +9,34 @@ html:not(.dark) {
   --glass-border: rgba(212, 175, 55, 0.22);
 }
 
+/* Prevent horizontal scroll on narrow viewports (decor layers, wide kids) */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+video,
+iframe,
+canvas {
+  max-width: 100%;
+}
+
+.site-footer {
+  overflow-x: clip;
+}
+
+/* WhatsApp cluster: respect safe area + small screens */
+[data-wa-fab] {
+  right: max(0.75rem, env(safe-area-inset-right, 0px)) !important;
+  bottom: max(0.75rem, env(safe-area-inset-bottom, 0px)) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -122,7 +148,7 @@ body.theme-transitioning * {
 .ba-slider {
   position: relative;
   width: 100%;
-  max-width: 640px;
+  max-width: min(640px, 100%);
   margin: 0 auto;
   aspect-ratio: 4 / 3;
   border-radius: 1rem;
@@ -206,6 +232,11 @@ body.theme-transitioning * {
   margin-bottom: 1rem;
 }
 
+.masonry img {
+  width: 100%;
+  vertical-align: middle;
+}
+
 /* Lightbox */
 .lightbox {
   position: fixed;
@@ -270,6 +301,10 @@ html:not(.dark) .hero-canvas-wrap canvas {
 }
 
 /* WhatsApp FAB */
+[data-wa-fab] .wa-fab__panel {
+  max-width: min(13rem, calc(100vw - 1.25rem));
+}
+
 .wa-fab__panel {
   transform-origin: bottom right;
   transform: scale(0.92);
@@ -287,6 +322,7 @@ html:not(.dark) .hero-canvas-wrap canvas {
 /* —— Hero “wow” (lightweight CSS) —— */
 .hero-wow {
   isolation: isolate;
+  overflow-x: clip;
 }
 
 .hero-wow__aurora {
@@ -366,6 +402,10 @@ html:not(.dark) .hero-canvas-wrap canvas {
 }
 
 .text-shimmer-gold {
+  display: inline;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  padding-bottom: 0.08em;
   background: linear-gradient(
     105deg,
     #d4af37 0%,
@@ -468,10 +508,13 @@ html:not(.dark) .promo-wow__bg {
 .promo-wow__inner {
   position: relative;
   z-index: 2;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: min(100%, 52rem);
   max-width: 52rem;
+  box-sizing: border-box;
   text-align: center;
-  padding: 2rem 1.25rem;
+  padding: 1.5rem 1rem;
   border-radius: 1.5rem;
   background: rgba(11, 11, 11, 0.45);
   border: 1px solid rgba(212, 175, 55, 0.25);
@@ -487,6 +530,12 @@ html:not(.dark) .promo-wow__inner {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.6) inset,
     0 20px 60px rgba(62, 47, 35, 0.12);
+}
+
+@media (min-width: 640px) {
+  .promo-wow__inner {
+    padding: 2rem 1.5rem;
+  }
 }
 
 .promo-wow__stars {

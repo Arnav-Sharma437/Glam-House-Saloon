@@ -16,19 +16,21 @@
       });
     });
 
-    gsap.utils.toArray("[data-parallax]").forEach(function (el) {
-      const amt = parseFloat(el.getAttribute("data-parallax")) || 0.08;
-      gsap.to(el, {
-        y: amt * 120,
-        ease: "none",
-        scrollTrigger: {
-          trigger: el,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
+    if (!window.matchMedia("(max-width: 1023px)").matches) {
+      gsap.utils.toArray("[data-parallax]").forEach(function (el) {
+        const amt = parseFloat(el.getAttribute("data-parallax")) || 0.08;
+        gsap.to(el, {
+          y: amt * 120,
+          ease: "none",
+          scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
       });
-    });
+    }
 
     gsap.utils.toArray("[data-text-reveal]").forEach(function (el, i) {
       gsap.from(el, {
@@ -48,6 +50,14 @@
       btn.addEventListener("mouseleave", function () {
         gsap.to(btn, { scale: 1, duration: 0.3, ease: "power2.out" });
       });
+    });
+
+    var resizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        ScrollTrigger.refresh();
+      }, 200);
     });
   }
 
