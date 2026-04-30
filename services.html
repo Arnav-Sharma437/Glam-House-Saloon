@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Glam House Salon services — keratin, microblading, lash extensions, skin treatments. Book on WhatsApp." />
+    <title>Services | Glam House Salon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: { luxury: "#0B0B0B", gold: "#D4AF37", cream: "#F5F1E8", brown: "#3E2F23" },
+            fontFamily: { display: ["Playfair Display", "Georgia", "serif"], sans: ["Inter", "system-ui", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/config.js"></script>
+    <script src="js/theme.js" defer></script>
+  </head>
+  <body class="font-sans bg-cream text-brown dark:bg-luxury dark:text-cream antialiased">
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <header class="sticky top-0 z-[1000] border-b border-gold/10 bg-cream/90 backdrop-blur-md dark:bg-luxury/90">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <a href="index.html" class="font-display text-lg font-semibold text-brown dark:text-cream md:text-xl">Glam House<span class="text-gold">.</span></a>
+        <nav class="hidden items-center gap-6 text-sm font-medium md:flex" aria-label="Main">
+          <a class="transition hover:text-gold" href="index.html">Home</a>
+          <a class="text-gold" href="services.html" aria-current="page">Services</a>
+          <a class="transition hover:text-gold" href="academy.html">Academy</a>
+          <a class="transition hover:text-gold" href="gallery.html">Gallery</a>
+          <a class="transition hover:text-gold" href="contact.html">Contact</a>
+        </nav>
+        <button type="button" id="nav-open" class="rounded-lg border border-gold/30 p-2 text-gold md:hidden" aria-expanded="false" aria-controls="nav-mobile" aria-label="Open menu">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" id="theme-toggle" class="rounded-full border border-gold/30 p-2 text-gold transition hover:bg-gold/10" aria-label="Toggle dark mode">
+            <span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+          </button>
+          <a href="#" data-wa="booking" class="btn-glam hidden rounded-full bg-gold px-4 py-2 text-sm font-semibold text-luxury shadow-md md:inline-block">Book</a>
+        </div>
+      </div>
+    </header>
+
+    <div id="nav-mobile" class="fixed inset-0 z-[999] hidden bg-cream/98 px-6 py-6 text-brown backdrop-blur-md dark:bg-luxury/98 dark:text-cream" aria-hidden="true">
+      <div class="flex justify-end"><button type="button" id="nav-close" class="rounded-lg border border-gold/30 px-3 py-1 text-sm text-gold">Close</button></div>
+      <nav class="mt-10 flex flex-col gap-6 font-display text-2xl text-brown dark:text-cream" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a class="text-gold" href="services.html">Services</a>
+        <a href="academy.html">Academy</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="#" data-wa="booking" class="mt-4 text-lg text-gold">WhatsApp →</a>
+      </nav>
+    </div>
+
+    <main class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
+      <p data-reveal class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Salon menu</p>
+      <h1 data-reveal class="font-display mt-2 text-4xl font-semibold text-brown dark:text-cream md:text-5xl">Services built for results</h1>
+      <p data-reveal class="mt-4 max-w-2xl text-brown/80 dark:text-cream/75">
+        Each service follows a clear problem → solution flow. Pricing shown as starting from; final quote after consultation.
+      </p>
+
+      <article id="keratin" class="mt-16 scroll-mt-28 border-b border-gold/10 pb-16 md:pb-20">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div data-reveal>
+            <h2 class="font-display text-3xl text-brown dark:text-cream">Keratin Smoothing</h2>
+            <p class="mt-2 text-sm font-semibold text-gold">Problem</p>
+            <p class="text-brown/80 dark:text-cream/75">Frizz, dryness, and unmanageable texture in humid weather.</p>
+            <p class="mt-4 text-sm font-semibold text-gold">Solution</p>
+            <p class="text-brown/80 dark:text-cream/75">Controlled protein treatment for smoother cuticles, reduced styling time, and healthy shine.</p>
+            <div class="mt-6 flex flex-wrap gap-4 text-sm">
+              <span class="glass-panel rounded-full px-4 py-2">From ₹4,500</span>
+              <span class="glass-panel rounded-full px-4 py-2">120–180 min</span>
+            </div>
+            <a href="#" data-wa="booking" class="btn-glam mt-6 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury">Book on WhatsApp</a>
+          </div>
+          <div data-reveal class="grid grid-cols-2 gap-3">
+            <img src="https://images.unsplash.com/photo-1522338242992-e1a5492a2b1d?w=500&q=75" alt="Before keratin" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1492106104524-061ba59a7232?w=500&q=75" alt="After keratin" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+          </div>
+        </div>
+      </article>
+
+      <article id="microblading" class="mt-16 scroll-mt-28 border-b border-gold/10 pb-16 md:pb-20">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div data-reveal class="order-2 grid grid-cols-2 gap-3 lg:order-1">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&q=75" alt="Brows before" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&q=75" alt="Brows after" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+          </div>
+          <div data-reveal class="order-1 lg:order-2">
+            <h2 class="font-display text-3xl text-brown dark:text-cream">Microblading & PMU Brows</h2>
+            <p class="mt-2 text-sm font-semibold text-gold">Problem</p>
+            <p class="text-brown/80 dark:text-cream/75">Sparse, uneven brows or gaps that pencil does not fix long-term.</p>
+            <p class="mt-4 text-sm font-semibold text-gold">Solution</p>
+            <p class="text-brown/80 dark:text-cream/75">Custom stroke patterns mapped to bone structure for healed, natural definition.</p>
+            <div class="mt-6 flex flex-wrap gap-4 text-sm">
+              <span class="glass-panel rounded-full px-4 py-2">From ₹12,000</span>
+              <span class="glass-panel rounded-full px-4 py-2">150–210 min</span>
+            </div>
+            <a href="#" data-wa="consult" class="btn-glam mt-6 inline-flex rounded-full border border-gold/50 px-6 py-3 text-sm font-semibold text-brown dark:text-cream">Free consult — WhatsApp</a>
+          </div>
+        </div>
+      </article>
+
+      <article id="lashes" class="mt-16 scroll-mt-28 border-b border-gold/10 pb-16 md:pb-20">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div data-reveal>
+            <h2 class="font-display text-3xl text-brown dark:text-cream">Lash Extensions</h2>
+            <p class="mt-2 text-sm font-semibold text-gold">Problem</p>
+            <p class="text-brown/80 dark:text-cream/75">Short lashes, mascara smudge, or uneven curl for events.</p>
+            <p class="mt-4 text-sm font-semibold text-gold">Solution</p>
+            <p class="text-brown/80 dark:text-cream/75">Weight-safe lengths with maps for almond, round, or hooded eyes.</p>
+            <div class="mt-6 flex flex-wrap gap-4 text-sm">
+              <span class="glass-panel rounded-full px-4 py-2">From ₹2,200</span>
+              <span class="glass-panel rounded-full px-4 py-2">90–120 min</span>
+            </div>
+            <a href="#" data-wa="booking" class="btn-glam mt-6 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury">Book on WhatsApp</a>
+          </div>
+          <div data-reveal class="grid grid-cols-2 gap-3">
+            <img src="https://images.unsplash.com/photo-1583001931099-95e14e2e728d?w=500&q=75" alt="Lashes" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500&q=75" alt="Lash detail" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+          </div>
+        </div>
+      </article>
+
+      <article id="skin" class="mt-16 scroll-mt-28 pb-8">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div data-reveal class="order-2 grid grid-cols-2 gap-3 lg:order-1">
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b1?w=500&q=75" alt="Skin facial" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&q=75" alt="Glow treatment" class="h-56 w-full rounded-xl object-cover md:h-72" width="500" height="600" loading="lazy" />
+          </div>
+          <div data-reveal class="order-1 lg:order-2">
+            <h2 class="font-display text-3xl text-brown dark:text-cream">Skin Services</h2>
+            <p class="mt-2 text-sm font-semibold text-gold">Problem</p>
+            <p class="text-brown/80 dark:text-cream/75">Dullness, congestion, or uneven tone before events.</p>
+            <p class="mt-4 text-sm font-semibold text-gold">Solution</p>
+            <p class="text-brown/80 dark:text-cream/75">Layered exfoliation + hydration protocols with downtime explained upfront.</p>
+            <div class="mt-6 flex flex-wrap gap-4 text-sm">
+              <span class="glass-panel rounded-full px-4 py-2">From ₹1,800</span>
+              <span class="glass-panel rounded-full px-4 py-2">45–75 min</span>
+            </div>
+            <a href="#" data-wa="pricing" class="btn-glam mt-6 inline-flex rounded-full bg-gold px-6 py-3 text-sm font-semibold text-luxury">Ask pricing — WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-gold/10 bg-brown/10 py-10 dark:bg-black/40">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 text-center text-sm text-brown/70 dark:text-cream/60 md:flex-row md:text-left">
+        <p class="font-display text-lg text-brown dark:text-cream">Glam House Salon</p>
+        <p>© <span id="y"></span> Glam House.</p>
+        <a class="hover:text-gold" href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <div class="fixed bottom-5 right-5 z-[10001] flex flex-col items-end gap-2" data-wa-fab>
+      <div class="wa-fab__panel glass-panel mb-1 w-52 rounded-xl border border-gold/20 py-2 shadow-xl" data-wa-fab-panel>
+        <a href="#" data-wa-preset="booking" class="block px-4 py-2 text-sm hover:bg-gold/10">Booking</a>
+        <a href="#" data-wa-preset="course" class="block px-4 py-2 text-sm hover:bg-gold/10">Course info</a>
+        <a href="#" data-wa-preset="pricing" class="block px-4 py-2 text-sm hover:bg-gold/10">Pricing</a>
+      </div>
+      <button type="button" data-wa-fab-toggle class="flex h-12 w-12 items-center justify-center rounded-full bg-gold text-xl text-luxury shadow-lg" aria-expanded="false" aria-label="More WhatsApp options">+</button>
+      <a data-wa-fab-main href="#" class="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl" aria-label="Open WhatsApp"
+        ><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    </div>
+
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/cursor.js" defer></script>
+    <script src="js/whatsapp.js" defer></script>
+    <script src="js/animations.js" defer></script>
+  </body>
+</html>
